@@ -1,0 +1,6 @@
+const http = require('http');
+const routes = require('./routes')
+
+const server = http.createServer(routes);
+
+server.listen(3000); // 1 Spin up a Node.js driven Server (on port 3000)
