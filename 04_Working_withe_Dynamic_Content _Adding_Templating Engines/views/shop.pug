@@ -1,0 +1,24 @@
+extends layouts/main-layout.pug
+block title 
+    title #{docTitle}
+block styles
+    link(rel="stylesheet", href="/css/product.css")
+block  content 
+    if products.length > 0
+        .grid
+            each product in products 
+                article( class="card product-item")
+                    header( class="card__header")
+                        h1.product__title #{product.title}
+                
+                    .card__image
+                        img(src='/images/'+product.image ,alt="A Book")
+                
+                    .card__content
+                        h2( class="product__price") $ #{product.price}
+                        p( class="product__description") #{product.description}
+                
+                    .card__actions
+                        button( class="btn") Add to Cart
+    else 
+        h1 Nu product
